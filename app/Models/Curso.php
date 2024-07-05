@@ -7,5 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Curso extends Model
 {
-    use HasFactory;
+    public function escuelaProfesional()
+    {
+        return $this->belongsTo(EscuelaProfesional::class, 'escuela_profesional_id');
+    }
 }

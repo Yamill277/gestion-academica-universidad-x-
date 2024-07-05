@@ -7,5 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class EscuelaProfesional extends Model
 {
-    use HasFactory;
+    public function cursos()
+    {
+        return $this->hasMany(Curso::class, 'escuela_profesional_id');
+    }
 }
+
